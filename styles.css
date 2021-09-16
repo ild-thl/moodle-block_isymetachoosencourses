@@ -1,0 +1,108 @@
+.block_ild_chosencourses .action-menu {
+	position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.block_ild_chosencourses {
+	position: relative;
+}
+/*
+.block_ildmetaview:before {
+	content: "loading...";
+    position: absolute;
+    width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: -1;
+}
+*/
+
+.block_ild_chosencourses .card-body {
+	padding: 0;
+}
+
+.block_ild_chosencourses .card-title {
+	padding: 1.25rem;
+    display: block !important;
+    margin-bottom: 0;
+}
+
+.block_ild_chosencourses .card-text {
+	margin-top: 0 !important;
+}
+
+.metatile-table .metatileicon {
+    vertical-align: top;}
+
+.metatile tr td:nth-child(2) {
+    text-align: right;
+    max-width: 140px;
+    vertical-align: top;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.container-img {
+	overflow: hidden;
+	height: 250px;
+	max-height: 250px;
+    max-width: 250px;
+}
+
+.container-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.block_ild_chosencourses .metatile {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.metatile-table .metatileicon {
+    text-align: left;
+}
+
+.metadetail-container {
+	max-width: 100%;
+}
+
+.metadetail-header {
+	padding: 30px;
+	background: #003f74;
+    color: #fff;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.metadetail-header h2 {
+	color: #fff;
+}
+
+.metadetail-header-image {
+	min-width: 200px;
+    min-height: 200px;
+    width: 200px;
+    background: #d4d4d4;
+    display: inline-block;
+    position: absolute;
+    bottom: -20px;
+    z-index: 1;
+}
+
+.metadetail-header-infos {
+	    margin-left: 250px;
+}
+
+.metadetail-header-infos table {
+	width: 100%;
+}
+
+.metadetail-header-infos tr td:nth-child(even) {
+ /*   padding-left: 20px;*/
+}
+

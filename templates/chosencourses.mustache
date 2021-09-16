@@ -1,0 +1,34 @@
+<div class="metatile">
+    <a href="{{courseurl}}">
+        <div class="metatile-img" style="background-image:url('{{image}}');"></div>
+        <div class="metatile-content">
+            <h2>{{coursetitle}}</h2>
+            <table class="metatile-table">
+                <tr>
+                    <td class="metatileicon iconlecturer">Zielgruppe:</td>
+                    <td>Studierende</td>
+                </tr>
+                <tr>
+                    <td class="metatileicon iconuni">Programm:</td>
+                    <td>{{university}}</td>
+                </tr>
+                <tr>
+                    <td class="metatileicon iconcourselanguage">Dozent*in:</td>
+                    <td>{{courselanguage}}</td>
+                </tr>
+                <tr>
+                    <td class="metatileicon iconsubject">Bearbeitungszeit:</td>
+                    <td>{{processingtime}} Stunden</td>
+                </tr>
+                <tr>
+                    <td class="metatileicon iconprocessingtime">Kursbeginn:</td>
+                    <td>{{starttime}}</td>
+                </tr>
+                <tr>
+                    <td class="metatileicon iconstarttime">Format:</td>
+                    <td>{{#subject}}{{subject}}{{/subject}}</td>
+                </tr>
+            </table>
+        </div>
+    </a>
+</div>
