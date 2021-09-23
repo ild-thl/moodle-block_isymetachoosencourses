@@ -22,11 +22,11 @@
  * @license		http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-class block_isychosencourses extends block_base {
+class block_isymetachosencourses extends block_base {
 
     public function init() {
 		global $PAGE;
-        $this->title = get_string('pluginname', 'block_isychosencourses');
+        $this->title = get_string('pluginname', 'block_isymetachosencourses');
     }
 
     public function instance_allow_multiple() {
@@ -67,7 +67,7 @@ class block_isychosencourses extends block_base {
         $this->content = new stdClass();
 
         $this->content->text = '';
-        $this->content->text .= '<h2>' . get_string('my_courses', 'block_isychosencourses') . '</h2>';
+        $this->content->text .= '<h2>' . get_string('my_courses', 'block_isymetachosencourses') . '</h2>';
 
         $courses = enrol_get_my_courses('*', 'fullname ASC');
 
@@ -168,7 +168,7 @@ class block_isychosencourses extends block_base {
                         'image' => $image,
                     );
 
-                    $this->content->text .= $OUTPUT->render_from_template('block_isychosencourses/chosencourses', $data);
+                    $this->content->text .= $OUTPUT->render_from_template('block_isymetachosencourses/chosencourses', $data);
                 }
             }
 
@@ -223,7 +223,7 @@ class block_isychosencourses extends block_base {
                         'image' => $image,
                     );
 
-                    $this->content->text .= $OUTPUT->render_from_template('block_isychosencourses/chosencourses', $data);
+                    $this->content->text .= $OUTPUT->render_from_template('block_isymetachosencourses/chosencourses', $data);
                 }
             }
 
@@ -231,7 +231,7 @@ class block_isychosencourses extends block_base {
 
         } else {
 
-            $this->content->text .= get_string('no_courses', 'block_isychosencourses');
+            $this->content->text .= get_string('no_courses', 'block_isymetachosencourses');
 
         }
 

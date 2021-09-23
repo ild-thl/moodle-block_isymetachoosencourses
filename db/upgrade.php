@@ -24,7 +24,7 @@
  
 defined('MOODLE_INTERNAL') || die();
 
-function xmldb_block_isychosencourses_upgrade($oldversion) {
+function xmldb_block_isymetachosencourses_upgrade($oldversion) {
     global $DB;
 
     return true;

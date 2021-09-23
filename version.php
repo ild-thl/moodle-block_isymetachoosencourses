@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_isymetachosencourses';
-$plugin->version   = 2021083001; 
+$plugin->version   = 2021084002; 
 $plugin->requires  = 2018051700; 
 $plugin->maturity  = MATURITY_ALPHA; 
 
