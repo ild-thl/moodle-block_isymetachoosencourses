@@ -22,11 +22,11 @@
  * @license		http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-class block_isychosencourses extends block_base {
+class block_isymetachosencourses extends block_base {
 
     public function init() {
 		global $PAGE;
-        $this->title = get_string('pluginname', 'block_isychosencourses');
+        $this->title = get_string('pluginname', 'block_isymetachosencourses');
     }
 
     public function instance_allow_multiple() {
@@ -43,7 +43,7 @@ class block_isychosencourses extends block_base {
 
     public function applicable_formats() {
         return array(
-                'all' => true
+            'all' => true
         );
     }
     
@@ -67,10 +67,11 @@ class block_isychosencourses extends block_base {
         $this->content = new stdClass();
 
         $this->content->text = '';
-        $this->content->text .= '<h2>' . get_string('my_courses', 'block_isychosencourses') . '</h2>';
+        $this->content->text .= '<h2>' . get_string('my_courses', 'block_isymetachosencourses') . '</h2>';
 
         $courses = enrol_get_my_courses('*', 'fullname ASC');
 
+        // if not enroled in any courses
         if (!empty($courses)) {
 
             $this->content->text .= '<div class="metatile-container">';
@@ -120,7 +121,7 @@ class block_isychosencourses extends block_base {
                     }
                     */
                     /*
-                    // simplecertificate
+                    
                     $num_simple_certificates = 0;
                     $num_issued_simple_certificates = 0;
                     $simple_certificates = $DB->get_records_sql('SELECT * FROM {simplecertificate} WHERE course='.$course->id);
@@ -143,12 +144,13 @@ class block_isychosencourses extends block_base {
                     $num_issued_certificates = $num_issued_simple_certificates;
                     */
 
+                    // generate array from user_fields
                     $universities = $DB->get_record('user_info_field', array('shortname' => 'isymeta_de_targetgroups'));
                     $subjectareas = $DB->get_record('user_info_field', array('shortname' => 'isymeta_de_formats'));
                     $uni = explode("\n", $universities->param1);
                     $subject = explode("\n", $subjectareas->param1);
 
-
+                    // supported list of languages
                     $lang_list = [
                         'Deutsch',
                         'Englisch'
@@ -168,11 +170,11 @@ class block_isychosencourses extends block_base {
                         'image' => $image,
                     );
 
-                    $this->content->text .= $OUTPUT->render_from_template('block_isychosencourses/chosencourses', $data);
+                    $this->content->text .= $OUTPUT->render_from_template('block_isymetachosencourses/chosencourses', $data); // from /templates
                 }
             }
 
-            // noindexcourse = 1
+            // generate HTML for enroled courses
             foreach ($courses as $course) {
 
                 // get meta per course
@@ -198,12 +200,13 @@ class block_isychosencourses extends block_base {
                         $startdate = date('d.m.Y', $meta_record->starttime);
                     }
 
+                    // prepare arrays from user info field (admin)
                     $universities = $DB->get_record('user_info_field', array('shortname' => 'isymeta_de_targetgroups'));
                     $subjectareas = $DB->get_record('user_info_field', array('shortname' => 'isymeta_de_formats'));
                     $uni = explode("\n", $universities->param1);
                     $subject = explode("\n", $subjectareas->param1);
 
-
+                    // supported langs
                     $lang_list = [
                         'Deutsch',
                         'Englisch'
@@ -223,7 +226,8 @@ class block_isychosencourses extends block_base {
                         'image' => $image,
                     );
 
-                    $this->content->text .= $OUTPUT->render_from_template('block_isychosencourses/chosencourses', $data);
+                    // Render from templates/chosencourses.mustache
+                    $this->content->text .= $OUTPUT->render_from_template('block_isymetachosencourses/chosencourses', $data);
                 }
             }
 
@@ -231,7 +235,7 @@ class block_isychosencourses extends block_base {
 
         } else {
 
-            $this->content->text .= get_string('no_courses', 'block_isychosencourses');
+            $this->content->text .= get_string('no_courses', 'block_isymetachosencourses');
 
         }
 
